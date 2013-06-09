@@ -21,3 +21,4 @@ twitter:
 ```
 
 And generate a card that looks like this:
+![Card Preview](/docs/card-preview.png)
