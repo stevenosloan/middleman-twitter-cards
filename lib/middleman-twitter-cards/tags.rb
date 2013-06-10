@@ -5,7 +5,7 @@ module Middleman
       class << self
 
         def map_name name
-          tag_name = "twitter:#{name.gsub('_',':')}"
+          tag_name = "twitter:#{name.to_s.gsub('_',':')}"
           return tag_name
         end
 
