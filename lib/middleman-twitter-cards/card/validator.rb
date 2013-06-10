@@ -12,12 +12,19 @@ module Middleman
         # @param requirements [Hash]
         # return [Hash] formatted hash based on requirements
         def validate attrs
-          attrs if validate_reqs attrs
+          format_reqs(attrs) if validate_reqs attrs
         end
 
         private
 
-          def format_reqs
+          def format_reqs attrs
+            fields = {}
+            @requirements.each do |k,v|
+              field = attrs.fetch(k) { nil }
+              fields[k] = field unless field.nil? || field.empty?
+            end
+
+            return fields
           end
 
           def validate_reqs attrs

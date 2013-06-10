@@ -39,4 +39,18 @@ describe Middleman::TwitterCards::Card::Validator do
     @validator.validate(input).should == input
   end
 
+  it "strips fields outside the card type" do
+    input = {
+      card: "summary",
+      title: "this is an acceptable length title",
+      description: "woot",
+      foo: "woo"
+    }
+    @validator.validate(input).should == {
+      card: "summary",
+      title: "this is an acceptable length title",
+      description: "woot"
+    }
+  end
+
 end
