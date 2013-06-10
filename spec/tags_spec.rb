@@ -9,4 +9,11 @@ describe Middleman::TwitterCards::Tags do
     Middleman::TwitterCards::Tags.map_name("foo_bar_baz").should == "twitter:foo:bar:baz"
   end
 
+  it "maps hashes to new twitter names" do
+    Middleman::TwitterCards::Tags.map_fields({one: "two", three: "four"}).should == {
+      "twitter:one" => "two",
+      "twitter:three" => "four"
+    }
+  end
+
 end
