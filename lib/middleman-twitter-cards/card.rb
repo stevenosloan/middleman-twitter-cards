@@ -6,7 +6,8 @@ module Middleman
       # pass it a resource, and it does it's darndest to
       # construct a valid dataset for the twitter card metatags
       #
-      def initialize
+      # @param type [Symbol] typ of card
+      def initialize type=:summary
       end
 
       # the raw data for the card
@@ -19,12 +20,6 @@ module Middleman
 
       # the og equivalent of the metatags
       def og_metatags
-      end
-
-      class Data
-        # i'm a card's data, I can be smart too
-        def initialize
-        end
       end
 
     end
